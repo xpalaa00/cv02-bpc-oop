@@ -28,16 +28,16 @@ namespace cv02_bpc_oop
             }
             Matrix B = new Matrix(randMat);
 
-            Console.WriteLine("MatA + MatB:\n{0}", (A + B));
-            Console.WriteLine("-MatA:\n{0}", -A);
-            Console.WriteLine("MatA - MatB:\n{0}", (A - B));
-            Console.WriteLine("MatA * MatB:\n{0}", (A * B));
+            try { Console.WriteLine("MatA + MatB:\n{0}", (A + B)); } catch { }
+            try { Console.WriteLine("-MatA:\n{0}", -A); } catch { }
+            try { Console.WriteLine("MatA - MatB:\n{0}", (A - B)); } catch { }
+            try { Console.WriteLine("MatA * MatB:\n{0}", (A * B)); } catch { }
             double multiplier = ((randGen.Next(200) / 10.0) - 10.0);
-            Console.WriteLine("MatA * {0}:\n{1}", multiplier, A * multiplier);
-            Console.WriteLine("MatA == MatB: {0}", (A == B));
-            Console.WriteLine("MatA != MatB: {0}", (A != B));
-            Console.WriteLine("Det(MatA): {0:f4}", A.Det());
-            Console.WriteLine("Det(MatB): {0:f4}", B.Det());
+            try { Console.WriteLine("MatA * {0}:\n{1}", multiplier, A * multiplier); } catch { }
+            try { Console.WriteLine("MatA == MatB: {0}", (A == B)); } catch { }
+            try { Console.WriteLine("MatA != MatB: {0}", (A != B)); } catch { }
+            try { Console.WriteLine("Det(MatA): {0:f4}", A.Det()); } catch { }
+            try { Console.WriteLine("Det(MatB): {0:f4}", B.Det()); } catch { }
 
             Console.ReadLine();
         }
