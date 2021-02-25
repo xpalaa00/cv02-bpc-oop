@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace cv02_bpc_oop
 {
@@ -153,16 +154,16 @@ namespace cv02_bpc_oop
 
         public override string ToString()
         {
-            string output = "";
+            StringBuilder output = new StringBuilder();
             for (int i = 0; i < Mat.GetLength(0); i++)
             {
                 for (int j = 0; j < Mat.GetLength(1); j++)
                 {
-                    output += String.Format("{0,6:f1}", Mat[i, j]);
+                    output.AppendFormat("{0,6:f1}", Mat[i, j]);
                 }
-                output += "\n";
+                output.AppendLine();
             }
-            return output;
+            return output.ToString();
         }
         public Matrix(double[,] mat)
         {
